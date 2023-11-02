@@ -2,7 +2,8 @@ package uz.turgunboyevjurabek.dagger2androom
 
 import android.app.Application
 import uz.turgunboyevjurabek.dagger2androom.di.companent.ApplicationComponent
-import uz.turgunboyevjurabek.dagger2androom.di.DaggerApplicationComponent
+import uz.turgunboyevjurabek.dagger2androom.di.companent.DaggerApplicationComponent
+import uz.turgunboyevjurabek.dagger2androom.di.module.DatabaseModule
 
 class App:Application() {
     companion object{
@@ -11,8 +12,9 @@ class App:Application() {
 
     override fun onCreate() {
         super.onCreate()
-        applicationComponent=DaggerApplicationComponent
+        applicationComponent= DaggerApplicationComponent
             .builder()
+            .databaseModule(DatabaseModule(applicationContext))
             .build()
 
     }

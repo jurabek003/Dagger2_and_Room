@@ -11,8 +11,7 @@ class Entity {
     var name:String?=null
     var lastName:String?=null
 
-    constructor(id: Int?, name: String?, lastName: String?) {
-        this.id = id
+    constructor( name: String?, lastName: String?) {
         this.name = name
         this.lastName = lastName
     }

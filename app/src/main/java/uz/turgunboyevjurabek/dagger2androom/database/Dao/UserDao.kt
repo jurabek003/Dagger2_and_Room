@@ -10,7 +10,7 @@ import uz.turgunboyevjurabek.dagger2androom.madels.Entity
 interface UserDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun addUser(list: List<Entity>)
+    fun addUser(entity: Entity)
 
     @Query("select *from Entity")
     fun getUser():List<Entity>
